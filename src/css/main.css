@@ -3,4 +3,5 @@
 @import '_fonts';
 @import '_hugo-internal-templates';
 @import '_social-icons';
+@import '_hide-show-fixed-header';
 @import '_styles';

@@ -1,0 +1,20 @@
+.hide-show-fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all .2s ease-in-out;
+
+  & .white-90 {
+    transition: all .2s ease-in-out;
+  }
+}
+
+.hide-show-fixed-header--solid {
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+
+  & .white-90 {
+    color: black;
+  }
+}
