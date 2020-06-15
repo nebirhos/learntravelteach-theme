@@ -16,24 +16,24 @@
 
 }
 
+/** Learn travel teach **/
 header.cover {
   background-size: cover;
   background-position: 0 40%;
 }
 
-.ltt-header__title {
-  padding-top: 15%;
-  padding-bottom: 15%;
-}
-
-.serif {
+/* Big padding for header title */
+.ltt-pv-flexible-l {
+  @media (--breakpoint-large) {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
 }
 
 .ltt-sidebar {
   flex: 1;
 
   @media (--breakpoint-large) {
-    border-color: yellow !important;
     flex: 0 0 16rem;
   }
 }

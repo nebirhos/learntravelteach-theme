@@ -47,10 +47,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito+Sans&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   </head>
 
-  <body class="ma0 {{ $.Param "body_classes"  | default "font-nunito-sans bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+  <body class="ma0 {{ .Site.Params.background_color_class | default "bg-black" }} {{ $.Param "body_classes"  | default "font-nunito-sans"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
 
     {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
-    <main class="pb7" role="main">
+    <main class="pb7 cf bg-near-white" role="main">
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}

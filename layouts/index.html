@@ -54,7 +54,13 @@
 
     {{ block "sidebar" . }}
     <article class="pl3-l mid-gray ltt-sidebar">
-        {{ .Content }}
+      <h3>
+        <a class="no-underline mid-gray" href="/about/">About me</a>
+      </h3>
+      {{ .Content }}
+      <div class="bt pt3 b--black-10">
+        {{ partialCached "social-follow.html" . }}
+      </div>
     </article>
     {{ end }}
 
