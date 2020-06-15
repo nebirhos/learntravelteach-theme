@@ -1,7 +1,4 @@
 {{ define "main" }}
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    {{ .Content }}
-  </article>
   {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
   {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
   {{/* Create a variable with that section to use in multiple places. */}}
@@ -12,7 +9,9 @@
     {{/* Derive the section name  */}}
     {{ $section_name := index (.Site.Params.mainSections) 0 }}
 
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <div class="pa3 pa4-ns w-100 center flex flex-row flex-wrap flex-nowrap-l justify-center items-stretch ">
+
+    <div class="pr3-l">
       {{/* Use $section_name to get the section title. Use "with" to only show it if it exists */}}
        {{ with .Site.GetPage "section" $section_name }}
           <h1 class="flex-none">
@@ -47,9 +46,17 @@
         {{ with .Site.GetPage "section" $section_name }}
           <a href="{{ .Permalink }}" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">{{ i18n "allTitle" . }}</a>
         {{ end }}
-        </section>
+      </section>
       {{ end }}
 
-      </div>
-  {{ end }}
+    </div>
+    {{ end }}
+
+    {{ block "sidebar" . }}
+    <article class="pl3-l mid-gray ltt-sidebar">
+        {{ .Content }}
+    </article>
+    {{ end }}
+
+    </div>
 {{ end }}
